@@ -1,0 +1,231 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|c:\\users\\admin\\downloads\\quanlykho-20250213t065135z-001\\quanlykho\\quanlykho\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|solutionrelative:quanlykho\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|c:\\users\\admin\\downloads\\quanlykho-20250213t065135z-001\\quanlykho\\quanlykho\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|solutionrelative:quanlykho\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\quanlykho\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|solutionrelative:quanlykho\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\quanlykho\\viewmodel\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|solutionrelative:quanlykho\\viewmodel\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|c:\\users\\admin\\downloads\\quanlykho-20250213t065135z-001\\quanlykho\\quanlykho\\unitwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|solutionrelative:quanlykho\\unitwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|c:\\users\\admin\\downloads\\quanlykho-20250213t065135z-001\\quanlykho\\quanlykho\\unitwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|solutionrelative:quanlykho\\unitwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\quanlykho\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|solutionrelative:quanlykho\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\quanlykho\\unitwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|solutionrelative:quanlykho\\unitwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\quanlykho\\loginwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|solutionrelative:quanlykho\\loginwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\quanlykho\\usercontrola\\controlbaruc.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|solutionrelative:quanlykho\\usercontrola\\controlbaruc.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\quanlykho\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|solutionrelative:quanlykho\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\quanlykho\\usercontrola\\controlbaruc.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FFA371E7-48A0-4551-965D-DE143E01431C}|QuanLyKho\\QuanLyKho.csproj|solutionrelative:quanlykho\\usercontrola\\controlbaruc.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 27,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BaseViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\ViewModel\\BaseViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyKho\\ViewModel\\BaseViewModel.cs",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\ViewModel\\BaseViewModel.cs",
+              "RelativeToolTip": "QuanLyKho\\ViewModel\\BaseViewModel.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T06:58:18.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UnitWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\UnitWindow.xaml",
+              "RelativeDocumentMoniker": "QuanLyKho\\UnitWindow.xaml",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\UnitWindow.xaml",
+              "RelativeToolTip": "QuanLyKho\\UnitWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-01T11:48:00.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UnitWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\UnitWindow.xaml.cs",
+              "RelativeDocumentMoniker": "QuanLyKho\\UnitWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\UnitWindow.xaml.cs",
+              "RelativeToolTip": "QuanLyKho\\UnitWindow.xaml.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAswBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T08:53:34.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "QuanLyKho\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\MainWindow.xaml",
+              "RelativeToolTip": "QuanLyKho\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-21T14:39:59.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ControlBarUC.xaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\UserControlA\\ControlBarUC.xaml",
+              "RelativeDocumentMoniker": "QuanLyKho\\UserControlA\\ControlBarUC.xaml",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\UserControlA\\ControlBarUC.xaml",
+              "RelativeToolTip": "QuanLyKho\\UserControlA\\ControlBarUC.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-25T06:50:28.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "QuanLyKho\\LoginWindow.xaml",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\LoginWindow.xaml",
+              "RelativeToolTip": "QuanLyKho\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-21T14:38:06.64Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 495,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "QuanLyKho\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\MainWindow.xaml.cs",
+              "RelativeToolTip": "QuanLyKho\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T13:34:20.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "QuanLyKho\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\MainWindow.xaml",
+              "RelativeToolTip": "QuanLyKho\\MainWindow.xaml",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAF8AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-26T06:26:20.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\ViewModel\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "QuanLyKho\\ViewModel\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\ViewModel\\MainViewModel.cs",
+              "RelativeToolTip": "QuanLyKho\\ViewModel\\MainViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T13:07:48.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UnitWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\UnitWindow.xaml",
+              "RelativeDocumentMoniker": "QuanLyKho\\UnitWindow.xaml",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\UnitWindow.xaml",
+              "RelativeToolTip": "QuanLyKho\\UnitWindow.xaml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-01T11:49:17.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "QuanLyKho\\LoginWindow.xaml",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\LoginWindow.xaml",
+              "RelativeToolTip": "QuanLyKho\\LoginWindow.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-25T15:46:59.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ControlBarUC.xaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\UserControlA\\ControlBarUC.xaml",
+              "RelativeDocumentMoniker": "QuanLyKho\\UserControlA\\ControlBarUC.xaml",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\QuanLyKho-20250213T065135Z-001\\QuanLyKho\\QuanLyKho\\UserControlA\\ControlBarUC.xaml",
+              "RelativeToolTip": "QuanLyKho\\UserControlA\\ControlBarUC.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAB3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-25T06:21:53.775Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
