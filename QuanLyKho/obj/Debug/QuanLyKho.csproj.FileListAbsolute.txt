@@ -98,3 +98,8 @@ D:\Quản lý kho thức ăn\QuanLyKho\QuanLyKho\obj\Debug\InputWindow.g.cs
 D:\Quản lý kho thức ăn\QuanLyKho\QuanLyKho\obj\Debug\InputWindow.baml
 D:\Quản lý kho thức ăn\QuanLyKho\QuanLyKho\obj\Debug\OutputWindow.g.cs
 D:\Quản lý kho thức ăn\QuanLyKho\QuanLyKho\obj\Debug\OutputWindow.baml
+D:\Quản lý kho thức ăn\QuanLyKho\QuanLyKho\bin\Debug\EntityFramework.dll
+D:\Quản lý kho thức ăn\QuanLyKho\QuanLyKho\bin\Debug\EntityFramework.SqlServer.dll
+D:\Quản lý kho thức ăn\QuanLyKho\QuanLyKho\bin\Debug\EntityFramework.xml
+D:\Quản lý kho thức ăn\QuanLyKho\QuanLyKho\bin\Debug\EntityFramework.SqlServer.xml
+D:\Quản lý kho thức ăn\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho_Content.g.cs
