@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyKho"
         mc:Ignorable="d"
-                xmlns:uc="clr-namespace:QuanLyKho.UserControlA"
+        xmlns:uc="clr-namespace:QuanLyKho.UserControlA"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -17,17 +17,17 @@
         ResizeMode="NoResize"
         WindowStyle="None" 
         WindowStartupLocation="CenterScreen"
-            x:Name="window"
-            Title="Vật tư" Height="500" Width="700">
+        x:Name="window"
+        DataContext="{StaticResource ObjectVM}"
+        Title="Vật tư" Height="500" Width="700">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" >
-            <uc:ControlBarUC Tag="{Binding Title,ElementName=window}"></uc:ControlBarUC>
+        <Grid Grid.Row="0">
+            <uc:ControlBarUC Tag="{Binding Title, ElementName=window}"></uc:ControlBarUC>
         </Grid>
-
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -36,36 +36,83 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <!--các giá trị được biding từ selected item-->
+            <!-- Form inputs -->
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <WrapPanel Margin="0 0 0 10">
-                    <TextBox Text="{Binding DisplayName ,UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Tên vật tư" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <ComboBox ItemsSource="{Binding Unit}"  SelectedItem="{Binding SelectedUnit,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Đơn vị đo" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
-                    <ComboBox ItemsSource="{Binding Suplier}"  SelectedItem="{Binding SelectedSuplier,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Nhà cung cấp" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
-                    <TextBox Text="{Binding QRCode,UpdateSourceTrigger=PropertyChanged}"  Margin="5 5 15 5" materialDesign:HintAssist.Hint="QRCode" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBox Text="{Binding BarCode,UpdateSourceTrigger=PropertyChanged}"  Margin="5 5 15 5" materialDesign:HintAssist.Hint="BarCode" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                   </WrapPanel>
+                    <TextBox Text="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged}" 
+                             IsEnabled="{Binding IsEditable}"
+                             Margin="5 5 15 5" 
+                             materialDesign:HintAssist.Hint="Tên vật tư" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <ComboBox ItemsSource="{Binding Unit}"  
+                              SelectedItem="{Binding SelectedUnit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                              IsEnabled="{Binding IsEditable}"
+                              materialDesign:HintAssist.Hint="Đơn vị đo" 
+                              IsEditable="True" 
+                              DisplayMemberPath="Displayname"
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" />
+                    <ComboBox ItemsSource="{Binding Suplier}"  
+                              SelectedItem="{Binding SelectedSuplier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                              IsEnabled="{Binding IsEditable}"
+                              materialDesign:HintAssist.Hint="Nhà cung cấp" 
+                              IsEditable="True" 
+                              DisplayMemberPath="DisplayName"
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" />
+                    <TextBox Text="{Binding QRcode, UpdateSourceTrigger=PropertyChanged}"  
+                             IsEnabled="{Binding IsEditable}"
+                             Margin="5 5 15 5" 
+                             materialDesign:HintAssist.Hint="QRCode" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox Text="{Binding BarCode, UpdateSourceTrigger=PropertyChanged}"  
+                             IsEnabled="{Binding IsEditable}"
+                             Margin="5 5 15 5" 
+                             materialDesign:HintAssist.Hint="BarCode" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                </WrapPanel>
             </materialDesign:Card>
+
+            <!-- CRUD Buttons -->
             <materialDesign:Card Grid.Row="1" Margin="5">
                 <Grid>
                     <WrapPanel>
-                        <Button Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="100"></Button>
-                        <Button Command="{Binding DeleteCommand}" Content="Xoá" Margin="5" Width="100"></Button>
-                        <Button Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="100"></Button>
+                        <Button Command="{Binding AddCommand}" 
+                                Content="Thêm" 
+                                Margin="5" 
+                                Width="100" 
+                                IsEnabled="{Binding IsControlsEnabled}"/>
+                        <Button Command="{Binding DeleteCommand}" 
+                                Content="Xoá" 
+                                Margin="5" 
+                                Width="100" 
+                                IsEnabled="{Binding IsControlsEnabled}"/>
+                        <Button Command="{Binding EditCommand}" 
+                                Content="Sửa" 
+                                Margin="5" 
+                                Width="100" 
+                                IsEnabled="{Binding IsControlsEnabled}"/>
+                        <Button Command="{Binding SaveCommand}" 
+                                Content="Lưu" 
+                                Margin="5" 
+                                Width="100" 
+                                IsEnabled="{Binding IsSaveEnabled}"/>
                     </WrapPanel>
                 </Grid>
             </materialDesign:Card>
+
+            <!-- Objects ListView -->
             <materialDesign:Card Grid.Row="2" Margin="5" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem,Mode=OneWayToSource}">
+                    <ListView ItemsSource="{Binding List}" 
+                              SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}"
+                              IsEnabled="{Binding IsControlsEnabled}">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="id" DisplayMemberBinding="{Binding Id}"></GridViewColumn>
-                                <GridViewColumn Header="Tên đơn vị đo" DisplayMemberBinding="{Binding DisplayName}"></GridViewColumn>
-                                <GridViewColumn Header="Đơn vị đo " DisplayMemberBinding="{Binding Unit.DisplayName}"></GridViewColumn>
-                                <GridViewColumn Header="Nhà cung cấp" DisplayMemberBinding="{Binding Suplier.DisplayName}"></GridViewColumn>
-                                <GridViewColumn Header="QRCode" DisplayMemberBinding="{Binding QRCode}"></GridViewColumn>
-                                <GridViewColumn Header="BarCode" DisplayMemberBinding="{Binding BarCode}"></GridViewColumn>
+                                <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" Width="120"/>
+                                <GridViewColumn Header="Tên vật tư" DisplayMemberBinding="{Binding DisplayName}" Width="120"/>
+                                <GridViewColumn Header="Đơn vị đo" DisplayMemberBinding="{Binding Unit.Displayname}" Width="100"/>
+                                <GridViewColumn Header="Nhà cung cấp" DisplayMemberBinding="{Binding Suplier.DisplayName}" Width="120"/>
+                                <GridViewColumn Header="QRCode" DisplayMemberBinding="{Binding QRcode}" Width="100"/>
+                                <GridViewColumn Header="BarCode" DisplayMemberBinding="{Binding BarCode}" Width="100"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
