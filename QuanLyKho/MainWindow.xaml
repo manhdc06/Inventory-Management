@@ -227,11 +227,9 @@
 
                                             </TextBlock>
                                             <Separator Grid.Row="1" Style="{StaticResource MaterialDesignLightSeparator}" />
-                                            <TextBlock Grid.Row="2" Margin="16 0 16 8" VerticalAlignment="Center" 
-                                                       HorizontalAlignment="Left"      
-                                                       Text="998568"
-                                                       Style="{StaticResource MaterialDesignDisplay1TextBlock}">
-                                            </TextBlock>
+                                            <TextBlock Grid.Row="2" Margin="16 0 16 8"
+           Text="{Binding DisplayedInput, StringFormat={}{0:N0}}"
+           Style="{StaticResource MaterialDesignDisplay1TextBlock}" />
                                             <materialDesign:PopupBox HorizontalAlignment="Right" Padding="2 0 2 0">
                                                 <StackPanel>
                                                     <!--đưa gì vào thì đưa-->
@@ -257,11 +255,10 @@
 
                                             </TextBlock>
                                             <Separator Grid.Row="1" Style="{StaticResource MaterialDesignLightSeparator}" />
-                                            <TextBlock Grid.Row="2" Margin="16 0 16 8" VerticalAlignment="Center" 
-                                                       HorizontalAlignment="Left"      
-                                                       Text="998568"
-                                                       Style="{StaticResource MaterialDesignDisplay1TextBlock}">
-                                            </TextBlock>
+                                            <TextBlock Grid.Row="2" Margin="16 0 16 8"
+           Text="{Binding DisplayedOutput, StringFormat={}{0:N0}}"
+           Style="{StaticResource MaterialDesignDisplay1TextBlock}" />
+
                                             <materialDesign:PopupBox HorizontalAlignment="Right" Padding="2 0 2 0">
                                                 <StackPanel>
                                                     <!--đưa gì vào thì đưa-->
@@ -287,11 +284,10 @@
 
                                             </TextBlock>
                                             <Separator Grid.Row="1" Style="{StaticResource MaterialDesignLightSeparator}" />
-                                            <TextBlock Grid.Row="2" Margin="16 0 16 8" VerticalAlignment="Center" 
-                                                       HorizontalAlignment="Left"      
-                                                       Text="998568"
-                                                       Style="{StaticResource MaterialDesignDisplay1TextBlock}">
-                                            </TextBlock>
+                                            <TextBlock Grid.Row="2" Margin="16 0 16 8"
+           Text="{Binding DisplayedInventory, StringFormat={}{0:N0}}"
+           Style="{StaticResource MaterialDesignDisplay1TextBlock}" />
+
                                             <materialDesign:PopupBox HorizontalAlignment="Right" Padding="2 0 2 0">
                                                 <StackPanel>
                                                     <!--đưa gì vào thì đưa-->
@@ -339,12 +335,13 @@
                             <Separator></Separator>
                         </Grid>
                         <Grid Grid.Row="2">
-                            <ListView>
+                            <ListView ItemsSource="{Binding InventoryList}" 
+          SelectedItem="{Binding SelectedInventory, Mode=TwoWay}">
                                 <ListView.View>
                                     <GridView>
-                                        <GridViewColumn Header="STT"></GridViewColumn>
-                                        <GridViewColumn Header="Tên vật tư"></GridViewColumn>
-                                        <GridViewColumn Header="Số lượng tồn"></GridViewColumn>
+                                        <GridViewColumn Header="STT" DisplayMemberBinding="{Binding STT}"></GridViewColumn>
+                                        <GridViewColumn Header="Tên vật tư" DisplayMemberBinding="{Binding Object.DisplayName}"></GridViewColumn>
+                                        <GridViewColumn Header="Số lượng tồn" DisplayMemberBinding="{Binding Count}"></GridViewColumn>
                                     </GridView>
                                 </ListView.View>
                             </ListView>

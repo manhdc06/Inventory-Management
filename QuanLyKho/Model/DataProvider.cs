@@ -19,10 +19,10 @@ namespace QuanLyKho.Model
             }
             set { _ins = value; }
         }
-        public QuanLyKhoThucAnEntities DB { get; set; }
+        public QuanLyKhoThucAnEntities1 DB { get; set; }
         private DataProvider()
         {
-            DB = new QuanLyKhoThucAnEntities();
+            DB = new QuanLyKhoThucAnEntities1();
         }            
     }
 }

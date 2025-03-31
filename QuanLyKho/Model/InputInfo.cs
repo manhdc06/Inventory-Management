@@ -17,7 +17,6 @@ namespace QuanLyKho.Model
         public string Id { get; set; }
         public string IdObject { get; set; }
         public string IdInput { get; set; }
-        public string idOutPut { get; set; }
         public Nullable<int> Count { get; set; }
         public Nullable<double> InputPrice { get; set; }
         public Nullable<double> OutputPrice { get; set; }

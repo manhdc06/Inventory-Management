@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QuanLyKhoThucAnModelStoreContainer" CdmEntityContainer="QuanLyKhoThucAnEntities">
+  <EntityContainerMapping StorageEntityContainer="QuanLyKhoThucAnModelStoreContainer" CdmEntityContainer="QuanLyKhoThucAnEntities1">
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="QuanLyKhoThucAnModel.Customer">
         <MappingFragment StoreEntitySet="Customer">
@@ -28,7 +28,6 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="IdObject" ColumnName="IdObject" />
           <ScalarProperty Name="IdInput" ColumnName="IdInput" />
-          <ScalarProperty Name="idOutPut" ColumnName="idOutPut" />
           <ScalarProperty Name="Count" ColumnName="Count" />
           <ScalarProperty Name="InputPrice" ColumnName="InputPrice" />
           <ScalarProperty Name="OutputPrice" ColumnName="OutputPrice" />
@@ -61,7 +60,7 @@
         <MappingFragment StoreEntitySet="OutputInfo">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="IdObject" ColumnName="IdObject" />
-          <ScalarProperty Name="IdOutput" ColumnName="IdOutput" />
+          <ScalarProperty Name="idOutputInfo" ColumnName="idOutputInfo" />
           <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
           <ScalarProperty Name="Count" ColumnName="Count" />
           <ScalarProperty Name="Status" ColumnName="Status" />

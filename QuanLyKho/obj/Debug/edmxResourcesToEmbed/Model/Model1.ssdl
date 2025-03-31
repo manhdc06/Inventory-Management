@@ -26,7 +26,6 @@
     <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="IdObject" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="IdInput" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="idOutPut" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="Count" Type="int" />
     <Property Name="InputPrice" Type="float" />
     <Property Name="OutputPrice" Type="float" />
@@ -56,7 +55,7 @@
     </Key>
     <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="IdObject" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="IdOutput" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="idOutputInfo" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="IdCustomer" Type="int" Nullable="false" />
     <Property Name="Count" Type="int" />
     <Property Name="Status" Type="nvarchar(max)" />
@@ -187,7 +186,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="OutputInfo">
-        <PropertyRef Name="IdOutput" />
+        <PropertyRef Name="idOutputInfo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

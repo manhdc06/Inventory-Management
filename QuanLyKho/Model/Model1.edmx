@@ -31,7 +31,6 @@
           <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="IdObject" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="IdInput" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="idOutPut" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="Count" Type="int" />
           <Property Name="InputPrice" Type="float" />
           <Property Name="OutputPrice" Type="float" />
@@ -61,7 +60,7 @@
           </Key>
           <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="IdObject" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="IdOutput" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="idOutputInfo" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="IdCustomer" Type="int" Nullable="false" />
           <Property Name="Count" Type="int" />
           <Property Name="Status" Type="nvarchar(max)" />
@@ -192,7 +191,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="OutputInfo">
-              <PropertyRef Name="IdOutput" />
+              <PropertyRef Name="idOutputInfo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -286,7 +285,6 @@
           <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IdObject" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IdInput" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="idOutPut" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Count" Type="Int32" />
           <Property Name="InputPrice" Type="Double" />
           <Property Name="OutputPrice" Type="Double" />
@@ -323,7 +321,7 @@
           </Key>
           <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IdObject" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdOutput" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="idOutputInfo" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IdCustomer" Type="Int32" Nullable="false" />
           <Property Name="Count" Type="Int32" />
           <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -461,7 +459,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="OutputInfo">
-              <PropertyRef Name="IdOutput" />
+              <PropertyRef Name="idOutputInfo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -477,7 +475,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QuanLyKhoThucAnEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QuanLyKhoThucAnEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="Inputs" EntityType="Self.Input" />
           <EntitySet Name="InputInfoes" EntityType="Self.InputInfo" />
@@ -527,7 +525,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QuanLyKhoThucAnModelStoreContainer" CdmEntityContainer="QuanLyKhoThucAnEntities">
+        <EntityContainerMapping StorageEntityContainer="QuanLyKhoThucAnModelStoreContainer" CdmEntityContainer="QuanLyKhoThucAnEntities1">
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="QuanLyKhoThucAnModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
@@ -555,7 +553,6 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdObject" ColumnName="IdObject" />
                 <ScalarProperty Name="IdInput" ColumnName="IdInput" />
-                <ScalarProperty Name="idOutPut" ColumnName="idOutPut" />
                 <ScalarProperty Name="Count" ColumnName="Count" />
                 <ScalarProperty Name="InputPrice" ColumnName="InputPrice" />
                 <ScalarProperty Name="OutputPrice" ColumnName="OutputPrice" />
@@ -588,7 +585,7 @@
               <MappingFragment StoreEntitySet="OutputInfo">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="IdObject" ColumnName="IdObject" />
-                <ScalarProperty Name="IdOutput" ColumnName="IdOutput" />
+                <ScalarProperty Name="idOutputInfo" ColumnName="idOutputInfo" />
                 <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
                 <ScalarProperty Name="Count" ColumnName="Count" />
                 <ScalarProperty Name="Status" ColumnName="Status" />

@@ -22,11 +22,15 @@ namespace QuanLyKho
         public UserWindow()
         {
             InitializeComponent();
+            this.DataContext = new ViewModel.UserViewModel();
         }
-
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-
+            if (DataContext is QuanLyKho.ViewModel.UserViewModel vm)
+            {
+                vm.Password = ((PasswordBox)sender).Password;
+            }
         }
+
     }
 }
