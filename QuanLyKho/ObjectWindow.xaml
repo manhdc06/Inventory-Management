@@ -18,7 +18,6 @@
         WindowStyle="None" 
         WindowStartupLocation="CenterScreen"
         x:Name="window"
-        DataContext="{StaticResource ObjectVM}"
         Title="Vật tư" Height="500" Width="700">
     <Grid>
         <Grid.RowDefinitions>
@@ -49,7 +48,7 @@
                               IsEnabled="{Binding IsEditable}"
                               materialDesign:HintAssist.Hint="Đơn vị đo" 
                               IsEditable="True" 
-                              DisplayMemberPath="Displayname"
+                              DisplayMemberPath="DisplayName"
                               Style="{StaticResource MaterialDesignFloatingHintComboBox}" />
                     <ComboBox ItemsSource="{Binding Suplier}"  
                               SelectedItem="{Binding SelectedSuplier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
@@ -109,7 +108,7 @@
                             <GridView>
                                 <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Id}" Width="120"/>
                                 <GridViewColumn Header="Tên vật tư" DisplayMemberBinding="{Binding DisplayName}" Width="120"/>
-                                <GridViewColumn Header="Đơn vị đo" DisplayMemberBinding="{Binding Unit.Displayname}" Width="100"/>
+                                <GridViewColumn Header="Đơn vị đo" DisplayMemberBinding="{Binding Unit.DisplayName}" Width="100"/>
                                 <GridViewColumn Header="Nhà cung cấp" DisplayMemberBinding="{Binding Suplier.DisplayName}" Width="120"/>
                                 <GridViewColumn Header="QRCode" DisplayMemberBinding="{Binding QRcode}" Width="100"/>
                                 <GridViewColumn Header="BarCode" DisplayMemberBinding="{Binding BarCode}" Width="100"/>

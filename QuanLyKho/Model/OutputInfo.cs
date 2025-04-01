@@ -20,6 +20,7 @@ namespace QuanLyKho.Model
         public int IdCustomer { get; set; }
         public Nullable<int> Count { get; set; }
         public string Status { get; set; }
+        public Nullable<double> OutputPrice { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Object Object { get; set; }

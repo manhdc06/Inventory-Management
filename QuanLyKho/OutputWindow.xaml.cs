@@ -22,11 +22,7 @@ namespace QuanLyKho
         public OutputWindow()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            this.DataContext = new ViewModel.OutputViewModel();
         }
     }
 }

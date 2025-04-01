@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using QuanLyKho.ViewModel;
 
 namespace QuanLyKho
 {
@@ -22,6 +23,7 @@ namespace QuanLyKho
         public UnitWindow()
         {
             InitializeComponent();
+            DataContext = new UnitViewModel();
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)

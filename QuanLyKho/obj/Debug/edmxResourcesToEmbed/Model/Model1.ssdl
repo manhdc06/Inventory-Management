@@ -29,7 +29,7 @@
     <Property Name="Count" Type="int" />
     <Property Name="InputPrice" Type="float" />
     <Property Name="OutputPrice" Type="float" />
-    <Property Name="Status" Type="nvarchar(max)" />
+    <Property Name="Status" Type="nvarchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="Object">
     <Key>
@@ -59,6 +59,7 @@
     <Property Name="IdCustomer" Type="int" Nullable="false" />
     <Property Name="Count" Type="int" />
     <Property Name="Status" Type="nvarchar(max)" />
+    <Property Name="OutputPrice" Type="float" />
   </EntityType>
   <EntityType Name="Suplier">
     <Key>
@@ -87,7 +88,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Displayname" Type="nvarchar(max)" />
+    <Property Name="DisplayName" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -106,30 +107,6 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DisplayName" Type="nvarchar(max)" />
   </EntityType>
-  <Association Name="FK__InputInfo__IdInp__4AB81AF0">
-    <End Role="Input" Type="Self.Input" Multiplicity="1" />
-    <End Role="InputInfo" Type="Self.InputInfo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Input">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="InputInfo">
-        <PropertyRef Name="IdInput" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__InputInfo__Statu__49C3F6B7">
-    <End Role="Object" Type="Self.Object" Multiplicity="1" />
-    <End Role="InputInfo" Type="Self.InputInfo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Object">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="InputInfo">
-        <PropertyRef Name="IdObject" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__Object__BarCode__3D5E1FD2">
     <End Role="Unit" Type="Self.Unit" Multiplicity="1" />
     <End Role="Object" Type="Self.Object" Multiplicity="*" />
@@ -202,6 +179,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_InputInfo_Input">
+    <End Role="Input" Type="Self.Input" Multiplicity="1" />
+    <End Role="InputInfo" Type="Self.InputInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Input">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InputInfo">
+        <PropertyRef Name="IdInput" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InputInfo_Object">
+    <End Role="Object" Type="Self.Object" Multiplicity="1" />
+    <End Role="InputInfo" Type="Self.InputInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InputInfo">
+        <PropertyRef Name="IdObject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Unit">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="1" />
+    <End Role="Object" Type="Self.Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Object">
+        <PropertyRef Name="IdUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="QuanLyKhoThucAnModelStoreContainer">
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Input" EntityType="Self.Input" Schema="dbo" store:Type="Tables" />
@@ -214,14 +227,6 @@
     <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UsersRole" EntityType="Self.UsersRole" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__InputInfo__IdInp__4AB81AF0" Association="Self.FK__InputInfo__IdInp__4AB81AF0">
-      <End Role="Input" EntitySet="Input" />
-      <End Role="InputInfo" EntitySet="InputInfo" />
-    </AssociationSet>
-    <AssociationSet Name="FK__InputInfo__Statu__49C3F6B7" Association="Self.FK__InputInfo__Statu__49C3F6B7">
-      <End Role="Object" EntitySet="Object" />
-      <End Role="InputInfo" EntitySet="InputInfo" />
-    </AssociationSet>
     <AssociationSet Name="FK__Object__BarCode__3D5E1FD2" Association="Self.FK__Object__BarCode__3D5E1FD2">
       <End Role="Unit" EntitySet="Unit" />
       <End Role="Object" EntitySet="Object" />
@@ -245,6 +250,18 @@
     <AssociationSet Name="FK__Users__IdRole__4316F928" Association="Self.FK__Users__IdRole__4316F928">
       <End Role="UsersRole" EntitySet="UsersRole" />
       <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InputInfo_Input" Association="Self.FK_InputInfo_Input">
+      <End Role="Input" EntitySet="Input" />
+      <End Role="InputInfo" EntitySet="InputInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InputInfo_Object" Association="Self.FK_InputInfo_Object">
+      <End Role="Object" EntitySet="Object" />
+      <End Role="InputInfo" EntitySet="InputInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Unit" Association="Self.FK_Object_Unit">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="Object" EntitySet="Object" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

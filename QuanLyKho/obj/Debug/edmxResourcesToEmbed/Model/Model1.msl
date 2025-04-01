@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QuanLyKhoThucAnModelStoreContainer" CdmEntityContainer="QuanLyKhoThucAnEntities1">
+  <EntityContainerMapping StorageEntityContainer="QuanLyKhoThucAnModelStoreContainer" CdmEntityContainer="QuanLyKhoThucAnEntities3">
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="QuanLyKhoThucAnModel.Customer">
         <MappingFragment StoreEntitySet="Customer">
@@ -64,6 +64,7 @@
           <ScalarProperty Name="IdCustomer" ColumnName="IdCustomer" />
           <ScalarProperty Name="Count" ColumnName="Count" />
           <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="OutputPrice" ColumnName="OutputPrice" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -95,7 +96,7 @@
       <EntityTypeMapping TypeName="QuanLyKhoThucAnModel.Unit">
         <MappingFragment StoreEntitySet="Unit">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Displayname" ColumnName="Displayname" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

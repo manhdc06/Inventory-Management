@@ -57,8 +57,21 @@ namespace QuanLyKho.ViewModel
             CustomerCommand = new RelayCommand<object>((p) => true, (p) => new CustomerWindow().ShowDialog());
             ObjectCommand = new RelayCommand<object>((p) => true, (p) => new ObjectWindow().ShowDialog());
             UserCommand = new RelayCommand<object>((p) => true, (p) => new UserWindow().ShowDialog());
-            InputCommand = new RelayCommand<object>((p) => true, (p) => new InputWindow().ShowDialog());
-            OutputCommand = new RelayCommand<object>((p) => true, (p) => new OutputWindow().ShowDialog());
+            InputCommand = new RelayCommand<object>((p) => true, (p) =>
+            {
+                var inputWindow = new InputWindow();
+                inputWindow.ShowDialog();
+                LoadInventoryData(); // Cập nhật lại dữ liệu sau khi nhập kho
+            });
+
+            OutputCommand = new RelayCommand<object>((p) => true, (p) =>
+            {
+                var outputWindow = new OutputWindow();
+                outputWindow.ShowDialog();
+                LoadInventoryData(); // Cập nhật lại dữ liệu sau khi xuất kho
+            });
+
+
         }
 
         void LoadInventoryData()

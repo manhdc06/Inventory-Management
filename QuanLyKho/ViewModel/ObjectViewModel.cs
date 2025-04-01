@@ -177,7 +177,7 @@ namespace QuanLyKho.ViewModel
                     // Create new object
                     var newObject = new Object()
                     {
-                        Id = Guid.NewGuid().ToString(),
+                        Id = GetNextId().ToString(), // <-- dòng này PHẢI đúng!
                         DisplayName = DisplayName,
                         IdUnit = SelectedUnit.Id,
                         IdSuplier = SelectedSuplier.Id,
@@ -186,6 +186,7 @@ namespace QuanLyKho.ViewModel
                         Unit = SelectedUnit,
                         Suplier = SelectedSuplier
                     };
+
 
                     // Add to database
                     DataProvider.Ins.DB.Objects.Add(newObject);
@@ -251,6 +252,24 @@ namespace QuanLyKho.ViewModel
             SelectedSuplier = null;
             QRcode = "";
             BarCode = "";
+        }
+
+        private int GetNextId()
+        {
+            if (List == null || List.Count == 0)
+                return 1;
+
+            var maxId = List
+                .Select(x =>
+                {
+                    if (int.TryParse(x.Id, out int parsed))
+                        return parsed;
+                    return 0;
+                })
+                .DefaultIfEmpty(0)
+                .Max();
+
+            return maxId + 1;
         }
     }
 }

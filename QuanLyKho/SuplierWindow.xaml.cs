@@ -22,6 +22,7 @@ namespace QuanLyKho
         public SuplierWindow()
         {
             InitializeComponent();
+            this.DataContext = new ViewModel.SuplierViewModel();
         }
     }
 }

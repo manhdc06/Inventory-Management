@@ -18,12 +18,15 @@ namespace QuanLyKho.Model
         public Unit()
         {
             this.Objects = new HashSet<Object>();
+            this.Objects1 = new HashSet<Object>();
         }
     
         public int Id { get; set; }
-        public string Displayname { get; set; }
+        public string DisplayName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Object> Objects { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Object> Objects1 { get; set; }
     }
 }

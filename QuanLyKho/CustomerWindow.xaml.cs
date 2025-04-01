@@ -22,6 +22,7 @@ namespace QuanLyKho
         public CustomerWindow()
         {
             InitializeComponent();
+            this.DataContext = new ViewModel.CustomerViewModel();
         }
     }
 }

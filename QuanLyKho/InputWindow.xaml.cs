@@ -22,6 +22,7 @@ namespace QuanLyKho
         public InputWindow()
         {
             InitializeComponent();
+            this.DataContext = new ViewModel.InputViewModel();
         }
     }
 }

@@ -13,10 +13,10 @@
             }
             set { _ins = value; }
         }
-        public QuanLyKhoThucAnEntities1 DB { get; set; }
+        public QuanLyKhoThucAnEntities3 DB { get; set; }
         private DataProvider()
         {
-            DB = new QuanLyKhoThucAnEntities1();
+            DB = new QuanLyKhoThucAnEntities3();
         }            
     }
 }

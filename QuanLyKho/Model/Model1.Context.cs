@@ -13,10 +13,10 @@ namespace QuanLyKho.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QuanLyKhoThucAnEntities1 : DbContext
+    public partial class QuanLyKhoThucAnEntities3 : DbContext
     {
-        public QuanLyKhoThucAnEntities1()
-            : base("name=QuanLyKhoThucAnEntities1")
+        public QuanLyKhoThucAnEntities3()
+            : base("name=QuanLyKhoThucAnEntities3")
         {
         }
     

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Quản lý kho thức ăn\QuanLyKho\QuanLyKho\obj\Debug\
+D:\Quản lý kho thức ăn\QuanLyKho\obj\Debug\
 QuanLyKho
 none
 false
 DEBUG;TRACE
-D:\Quản lý kho thức ăn\QuanLyKho\QuanLyKho\App.xaml
+D:\Quản lý kho thức ăn\QuanLyKho\App.xaml
 111060725109
 2739969757
-361199258802
-2237973905
+42-1739905536
+22-1086347807
 CustomerWindow.xaml;InputWindow.xaml;LoginWindow.xaml;MainWindow.xaml;ObjectWindow.xaml;OutputWindow.xaml;ResourceXAML\MainResource.xaml;SuplierWindow.xaml;UnitWindow.xaml;UserControlA\ControlBarUC.xaml;UserWindow.xaml;
 
-True
+False
 

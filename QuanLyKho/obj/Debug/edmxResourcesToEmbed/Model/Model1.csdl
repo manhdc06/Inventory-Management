@@ -19,7 +19,7 @@
     </Key>
     <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DateInPut" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="InputInfoes" Relationship="Self.FK__InputInfo__IdInp__4AB81AF0" FromRole="Input" ToRole="InputInfo" />
+    <NavigationProperty Name="InputInfoes" Relationship="Self.FK_InputInfo_Input" FromRole="Input" ToRole="InputInfo" />
   </EntityType>
   <EntityType Name="InputInfo">
     <Key>
@@ -31,9 +31,9 @@
     <Property Name="Count" Type="Int32" />
     <Property Name="InputPrice" Type="Double" />
     <Property Name="OutputPrice" Type="Double" />
-    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Input" Relationship="Self.FK__InputInfo__IdInp__4AB81AF0" FromRole="InputInfo" ToRole="Input" />
-    <NavigationProperty Name="Object" Relationship="Self.FK__InputInfo__Statu__49C3F6B7" FromRole="InputInfo" ToRole="Object" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Input" Relationship="Self.FK_InputInfo_Input" FromRole="InputInfo" ToRole="Input" />
+    <NavigationProperty Name="Object" Relationship="Self.FK_InputInfo_Object" FromRole="InputInfo" ToRole="Object" />
   </EntityType>
   <EntityType Name="Object">
     <Key>
@@ -45,10 +45,11 @@
     <Property Name="IdSuplier" Type="Int32" Nullable="false" />
     <Property Name="QRcode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="BarCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="InputInfoes" Relationship="Self.FK__InputInfo__Statu__49C3F6B7" FromRole="Object" ToRole="InputInfo" />
+    <NavigationProperty Name="InputInfoes" Relationship="Self.FK_InputInfo_Object" FromRole="Object" ToRole="InputInfo" />
     <NavigationProperty Name="Unit" Relationship="Self.FK__Object__BarCode__3D5E1FD2" FromRole="Object" ToRole="Unit" />
     <NavigationProperty Name="Suplier" Relationship="Self.FK__Object__IdSuplie__3E52440B" FromRole="Object" ToRole="Suplier" />
     <NavigationProperty Name="OutputInfoes" Relationship="Self.FK__OutputInf__IdObj__4F7CD00D" FromRole="Object" ToRole="OutputInfo" />
+    <NavigationProperty Name="Unit1" Relationship="Self.FK_Object_Unit" FromRole="Object" ToRole="Unit" />
   </EntityType>
   <EntityType Name="Output">
     <Key>
@@ -68,6 +69,7 @@
     <Property Name="IdCustomer" Type="Int32" Nullable="false" />
     <Property Name="Count" Type="Int32" />
     <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OutputPrice" Type="Double" />
     <NavigationProperty Name="Customer" Relationship="Self.FK__OutputInf__IdCus__5165187F" FromRole="OutputInfo" ToRole="Customer" />
     <NavigationProperty Name="Object" Relationship="Self.FK__OutputInf__IdObj__4F7CD00D" FromRole="OutputInfo" ToRole="Object" />
     <NavigationProperty Name="Output" Relationship="Self.FK__OutputInf__IdOut__5070F446" FromRole="OutputInfo" ToRole="Output" />
@@ -100,8 +102,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Displayname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Objects" Relationship="Self.FK__Object__BarCode__3D5E1FD2" FromRole="Unit" ToRole="Object" />
+    <NavigationProperty Name="Objects1" Relationship="Self.FK_Object_Unit" FromRole="Unit" ToRole="Object" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -134,7 +137,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__InputInfo__IdInp__4AB81AF0">
+  <Association Name="FK_InputInfo_Input">
     <End Role="Input" Type="Self.Input" Multiplicity="1" />
     <End Role="InputInfo" Type="Self.InputInfo" Multiplicity="*" />
     <ReferentialConstraint>
@@ -146,7 +149,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__InputInfo__Statu__49C3F6B7">
+  <Association Name="FK_InputInfo_Object">
     <End Role="Object" Type="Self.Object" Multiplicity="1" />
     <End Role="InputInfo" Type="Self.InputInfo" Multiplicity="*" />
     <ReferentialConstraint>
@@ -194,6 +197,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Object_Unit">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="1" />
+    <End Role="Object" Type="Self.Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Object">
+        <PropertyRef Name="IdUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__OutputInf__IdOut__5070F446">
     <End Role="Output" Type="Self.Output" Multiplicity="1" />
     <End Role="OutputInfo" Type="Self.OutputInfo" Multiplicity="*" />
@@ -218,7 +233,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="QuanLyKhoThucAnEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="QuanLyKhoThucAnEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Customers" EntityType="Self.Customer" />
     <EntitySet Name="Inputs" EntityType="Self.Input" />
     <EntitySet Name="InputInfoes" EntityType="Self.InputInfo" />
@@ -234,11 +249,11 @@
       <End Role="Customer" EntitySet="Customers" />
       <End Role="OutputInfo" EntitySet="OutputInfoes" />
     </AssociationSet>
-    <AssociationSet Name="FK__InputInfo__IdInp__4AB81AF0" Association="Self.FK__InputInfo__IdInp__4AB81AF0">
+    <AssociationSet Name="FK_InputInfo_Input" Association="Self.FK_InputInfo_Input">
       <End Role="Input" EntitySet="Inputs" />
       <End Role="InputInfo" EntitySet="InputInfoes" />
     </AssociationSet>
-    <AssociationSet Name="FK__InputInfo__Statu__49C3F6B7" Association="Self.FK__InputInfo__Statu__49C3F6B7">
+    <AssociationSet Name="FK_InputInfo_Object" Association="Self.FK_InputInfo_Object">
       <End Role="Object" EntitySet="Objects" />
       <End Role="InputInfo" EntitySet="InputInfoes" />
     </AssociationSet>
@@ -253,6 +268,10 @@
     <AssociationSet Name="FK__OutputInf__IdObj__4F7CD00D" Association="Self.FK__OutputInf__IdObj__4F7CD00D">
       <End Role="Object" EntitySet="Objects" />
       <End Role="OutputInfo" EntitySet="OutputInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Unit" Association="Self.FK_Object_Unit">
+      <End Role="Unit" EntitySet="Units" />
+      <End Role="Object" EntitySet="Objects" />
     </AssociationSet>
     <AssociationSet Name="FK__OutputInf__IdOut__5070F446" Association="Self.FK__OutputInf__IdOut__5070F446">
       <End Role="Output" EntitySet="Outputs" />

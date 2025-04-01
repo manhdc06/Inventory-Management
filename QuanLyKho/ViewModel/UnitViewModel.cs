@@ -22,7 +22,7 @@ namespace QuanLyKho.ViewModel
                 OnPropertyChanged();
                 if (SelectedItem != null)
                 {
-                    DisplayName = SelectedItem.Displayname;
+                    DisplayName = SelectedItem.DisplayName;
                 }
             }
         }
@@ -48,34 +48,28 @@ namespace QuanLyKho.ViewModel
 
         public UnitViewModel()
         {
-            // Initialize properties
             IsEditable = false;
             IsSaveEnabled = false;
             IsControlsEnabled = true;
 
-            // Load data
             LoadUnits();
 
-            // Initialize commands
-            AddCommand = new RelayCommand<object>((p) => { return true; }, (p) => { AddUnit(); });
-            EditCommand = new RelayCommand<object>((p) => { return SelectedItem != null; }, (p) => { EditUnit(); });
-            DeleteCommand = new RelayCommand<object>((p) => { return SelectedItem != null; }, (p) => { DeleteUnit(); });
-            SaveCommand = new RelayCommand<object>((p) => { return IsSaveEnabled && !string.IsNullOrEmpty(DisplayName); }, (p) => { SaveUnit(); });
+            AddCommand = new RelayCommand<object>((p) => true, (p) => AddUnit());
+            EditCommand = new RelayCommand<object>((p) => SelectedItem != null, (p) => EditUnit());
+            DeleteCommand = new RelayCommand<object>((p) => SelectedItem != null, (p) => DeleteUnit());
+            SaveCommand = new RelayCommand<object>((p) => IsSaveEnabled && !string.IsNullOrWhiteSpace(DisplayName), (p) => SaveUnit());
         }
 
         private void LoadUnits()
         {
-            List = new ObservableCollection<Unit>(DataProvider.Ins.DB.Units);
+            List = new ObservableCollection<Unit>(DataProvider.Ins.DB.Units.ToList());
         }
 
         private void AddUnit()
         {
             isAddNew = true;
-
-            // Clear form fields
             DisplayName = "";
 
-            // Enable editing and save button
             IsEditable = true;
             IsSaveEnabled = true;
             IsControlsEnabled = false;
@@ -83,9 +77,10 @@ namespace QuanLyKho.ViewModel
 
         private void EditUnit()
         {
+            if (SelectedItem == null) return;
+
             isAddNew = false;
 
-            // Enable editing and save button
             IsEditable = true;
             IsSaveEnabled = true;
             IsControlsEnabled = false;
@@ -93,121 +88,90 @@ namespace QuanLyKho.ViewModel
 
         private void DeleteUnit()
         {
-            if (SelectedItem != null)
+            if (SelectedItem == null) return;
+
+            var result = MessageBox.Show("Bạn có chắc chắn muốn xóa đơn vị đo này không?", "Xác nhận xóa", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
             {
-                MessageBoxResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa đơn vị đo này không?", "Xác nhận xóa", MessageBoxButton.YesNo, MessageBoxImage.Question);
-
-                if (result == MessageBoxResult.Yes)
+                try
                 {
-                    try
+                    int used = DataProvider.Ins.DB.Objects.Count(o => o.IdUnit == SelectedItem.Id);
+                    if (used > 0)
                     {
-                        // Check if the unit is used in Objects table
-                        var objectCheck = DataProvider.Ins.DB.Objects.Where(x => x.IdUnit == SelectedItem.Id).Count();
-
-                        if (objectCheck > 0)
-                        {
-                            MessageBox.Show("Không thể xóa đơn vị đo này vì đã được sử dụng trong danh sách vật tư!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
-                            return;
-                        }
-
-                        // Delete from database
-                        DataProvider.Ins.DB.Units.Remove(SelectedItem);
-                        DataProvider.Ins.DB.SaveChanges();
-
-                        // Update list
-                        List.Remove(SelectedItem);
-
-                        // Clear selection
-                        ClearSelection();
-
-                        MessageBox.Show("Xóa đơn vị đo thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Không thể xóa đơn vị đo vì đã được sử dụng trong danh sách vật tư!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Có lỗi khi xóa: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
+
+                    DataProvider.Ins.DB.Units.Remove(SelectedItem);
+                    DataProvider.Ins.DB.SaveChanges();
+
+                    LoadUnits();
+                    ClearSelection();
+
+                    MessageBox.Show("Đã xóa đơn vị đo!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xóa: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
 
         private void SaveUnit()
         {
-            if (isAddNew) // Add new unit
+            string trimmedName = DisplayName?.Trim();
+            if (string.IsNullOrEmpty(trimmedName))
             {
-                try
+                MessageBox.Show("Vui lòng nhập tên đơn vị hợp lệ!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            try
+            {
+                if (isAddNew)
                 {
-                    // Check if unit with same name already exists
-                    var existingUnit = DataProvider.Ins.DB.Units.FirstOrDefault(u => u.Displayname.ToLower() == DisplayName.ToLower());
-                    if (existingUnit != null)
+                    bool exists = DataProvider.Ins.DB.Units.Any(u => u.DisplayName.ToLower() == trimmedName.ToLower());
+                    if (exists)
                     {
-                        MessageBox.Show("Đơn vị đo này đã tồn tại!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Đơn vị đã tồn tại!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
                         return;
                     }
 
-                    // Create new unit
-                    var newUnit = new Unit()
-                    {
-                        Displayname = DisplayName
-                    };
-
-                    // Add to database
+                    var newUnit = new Unit() { DisplayName = trimmedName };
                     DataProvider.Ins.DB.Units.Add(newUnit);
                     DataProvider.Ins.DB.SaveChanges();
-
-                    // Add to list
-                    List.Add(newUnit);
-
-                    // Set as selected item
+                    LoadUnits();
                     SelectedItem = newUnit;
-
-                    MessageBox.Show("Thêm đơn vị đo thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Thêm thành công!", "Thông báo");
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Có lỗi khi thêm: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-            else // Update existing unit
-            {
-                try
-                {
-                    // Check if another unit with same name already exists
-                    var existingUnit = DataProvider.Ins.DB.Units.FirstOrDefault(u =>
-                        u.Displayname.ToLower() == DisplayName.ToLower() &&
-                        u.Id != SelectedItem.Id);
-
-                    if (existingUnit != null)
+                    var unit = DataProvider.Ins.DB.Units.FirstOrDefault(x => x.Id == SelectedItem.Id);
+                    if (unit != null)
                     {
-                        MessageBox.Show("Đơn vị đo này đã tồn tại!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
-                        return;
-                    }
+                        bool exists = DataProvider.Ins.DB.Units.Any(u => u.DisplayName.ToLower() == trimmedName.ToLower() && u.Id != unit.Id);
+                        if (exists)
+                        {
+                            MessageBox.Show("Tên đơn vị đã tồn tại!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            return;
+                        }
 
-                    // Find and update the unit
-                    var unitToUpdate = DataProvider.Ins.DB.Units.Where(x => x.Id == SelectedItem.Id).SingleOrDefault();
-
-                    if (unitToUpdate != null)
-                    {
-                        unitToUpdate.Displayname = DisplayName;
-
-                        // Save changes
+                        unit.DisplayName = trimmedName;
                         DataProvider.Ins.DB.SaveChanges();
-
-                        // Update in the list
                         LoadUnits();
-
-                        MessageBox.Show("Cập nhật đơn vị đo thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                        SelectedItem = unit;
+                        MessageBox.Show("Cập nhật thành công!", "Thông báo");
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Có lỗi khi cập nhật: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
 
-            // Reset state
-            IsEditable = false;
-            IsSaveEnabled = false;
-            IsControlsEnabled = true;
+                IsEditable = false;
+                IsSaveEnabled = false;
+                IsControlsEnabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu: " + ex.Message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void ClearSelection()
